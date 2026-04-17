@@ -1,3 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  output: 'export',
+  basePath: '/fieldstone-analytics',
+  images: { unoptimized: true },
+}
 module.exports = nextConfig
