@@ -83,3 +83,9 @@ body {
 .scan-line {
   animation: scanLine 8s linear infinite;
 }
+
+/* Rotating dashed orbit ring on SystemVisual center node */
+@keyframes spinRing {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
