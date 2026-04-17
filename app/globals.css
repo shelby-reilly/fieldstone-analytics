@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #050508;
+  --surface: #0d0d16;
+  --border: rgba(255, 255, 255, 0.06);
+  --accent: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.15);
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(56, 189, 248, 0.45); }
+
+/* Selection */
+::selection {
+  background: rgba(56, 189, 248, 0.2);
+  color: #e2e8f0;
+}
+
+/* Utility patterns */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.dot-bg {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Glow helpers */
+.glow-sky {
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25),
+              0 0 30px rgba(56, 189, 248, 0.08);
+}
+
+.glow-sky-strong {
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4),
+              0 0 40px rgba(56, 189, 248, 0.15),
+              0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Card hover transition */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.3),
+              0 0 40px rgba(56, 189, 248, 0.07),
+              0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+/* Scan line animation */
+@keyframes scanLine {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(400%); }
+}
+.scan-line {
+  animation: scanLine 8s linear infinite;
+}
