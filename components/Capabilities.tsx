@@ -28,7 +28,7 @@ const capabilities = [
     Icon: Activity,
     label: '04',
     title: 'Orthopedic Applications',
-    body: 'Simulation platforms purpose-built for implant design, biomechanical modeling, and surgical planning — translating clinical complexity into tractable, high-confidence computational models.',
+    body: 'Simulation platforms purpose-built for implant design, biomechanical modeling, surgical planning, surgical execution, and longitudinal assessments — translating clinical complexity into tractable, high-confidence computational models.',
     accent: '#818cf8',
   },
   {
