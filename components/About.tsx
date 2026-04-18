@@ -76,10 +76,35 @@ export default function About() {
           transition={{ duration: 0.7, delay: 0.35 }}
           className="inline-flex items-center gap-4"
         >
-          <div className="relative w-8 h-8">
-            <div className="absolute inset-0 border border-sky-400/40 rotate-45" />
-            <div className="absolute inset-[5px] bg-sky-400/10 rotate-45" />
-          </div>
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 142 142"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            className="shrink-0 opacity-70"
+          >
+            <rect
+              x="30" y="30" width="82" height="82"
+              transform="rotate(45 71 71)"
+              fill="none" stroke="#0D7AC7" strokeWidth="4" opacity="0.95"
+            />
+            <circle cx="71" cy="71" r="3.8"  fill="#1D8FE4" />
+            <circle cx="78" cy="71" r="3.4"  fill="rgba(29,143,228,0.94)" />
+            <circle cx="82" cy="77" r="3.2"  fill="rgba(29,143,228,0.90)" />
+            <circle cx="81" cy="85" r="3.0"  fill="rgba(29,143,228,0.86)" />
+            <circle cx="74" cy="91" r="2.8"  fill="rgba(29,143,228,0.82)" />
+            <circle cx="64" cy="92" r="2.6"  fill="rgba(29,143,228,0.78)" />
+            <circle cx="55" cy="87" r="2.5"  fill="rgba(29,143,228,0.74)" />
+            <circle cx="49" cy="78" r="2.3"  fill="rgba(29,143,228,0.70)" />
+            <circle cx="48" cy="67" r="2.2"  fill="rgba(29,143,228,0.66)" />
+            <circle cx="53" cy="57" r="2.1"  fill="rgba(29,143,228,0.62)" />
+            <circle cx="62" cy="50" r="2.0"  fill="rgba(29,143,228,0.58)" />
+            <circle cx="74" cy="48" r="1.95" fill="rgba(29,143,228,0.54)" />
+            <circle cx="86" cy="52" r="1.9"  fill="rgba(29,143,228,0.50)" />
+            <circle cx="95" cy="61" r="1.85" fill="rgba(29,143,228,0.46)" />
+          </svg>
           <div className="text-left">
             <div className="text-sm tracking-[0.2em] uppercase text-slate-300 font-light">
               Fieldstone Analytics

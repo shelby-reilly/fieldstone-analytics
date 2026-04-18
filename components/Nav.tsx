@@ -34,10 +34,35 @@ export default function Nav() {
 
         {/* Logo mark */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="relative w-6 h-6 shrink-0">
-            <div className="absolute inset-0 border border-sky-400/50 rotate-45 group-hover:border-sky-400/80 transition-colors duration-300" />
-            <div className="absolute inset-[4px] bg-sky-400/15 rotate-45 group-hover:bg-sky-400/25 transition-colors duration-300" />
-          </div>
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 142 142"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            className="shrink-0 transition-opacity duration-300 group-hover:opacity-90"
+          >
+            <rect
+              x="30" y="30" width="82" height="82"
+              transform="rotate(45 71 71)"
+              fill="none" stroke="#0D7AC7" strokeWidth="4" opacity="0.95"
+            />
+            <circle cx="71" cy="71" r="3.8"  fill="#1D8FE4" />
+            <circle cx="78" cy="71" r="3.4"  fill="rgba(29,143,228,0.94)" />
+            <circle cx="82" cy="77" r="3.2"  fill="rgba(29,143,228,0.90)" />
+            <circle cx="81" cy="85" r="3.0"  fill="rgba(29,143,228,0.86)" />
+            <circle cx="74" cy="91" r="2.8"  fill="rgba(29,143,228,0.82)" />
+            <circle cx="64" cy="92" r="2.6"  fill="rgba(29,143,228,0.78)" />
+            <circle cx="55" cy="87" r="2.5"  fill="rgba(29,143,228,0.74)" />
+            <circle cx="49" cy="78" r="2.3"  fill="rgba(29,143,228,0.70)" />
+            <circle cx="48" cy="67" r="2.2"  fill="rgba(29,143,228,0.66)" />
+            <circle cx="53" cy="57" r="2.1"  fill="rgba(29,143,228,0.62)" />
+            <circle cx="62" cy="50" r="2.0"  fill="rgba(29,143,228,0.58)" />
+            <circle cx="74" cy="48" r="1.95" fill="rgba(29,143,228,0.54)" />
+            <circle cx="86" cy="52" r="1.9"  fill="rgba(29,143,228,0.50)" />
+            <circle cx="95" cy="61" r="1.85" fill="rgba(29,143,228,0.46)" />
+          </svg>
           <span className="text-sm tracking-[0.18em] uppercase text-slate-200 font-light">
             Fieldstone
             <span className="text-sky-400/70 ml-2">Analytics</span>
