@@ -9,8 +9,8 @@
 
     <!-- Right-side ambient glow -->
     <radialGradient id="glowRight" cx="78%" cy="50%" r="42%">
-      <stop offset="0%"   stop-color="rgba(56,189,248,0.07)"/>
-      <stop offset="100%" stop-color="rgba(56,189,248,0)"/>
+      <stop offset="0%"   stop-color="rgba(28,135,215,0.07)"/>
+      <stop offset="100%" stop-color="rgba(28,135,215,0)"/>
     </radialGradient>
 
     <!-- Fade the node mesh into the left content area -->
@@ -58,50 +58,50 @@
   <g clip-path="url(#rightArea)">
 
     <!-- Concentric rings -->
-    <circle cx="1200" cy="198" r="210" fill="none" stroke="rgba(56,189,248,0.045)" stroke-width="0.8"/>
-    <circle cx="1200" cy="198" r="145" fill="none" stroke="rgba(56,189,248,0.065)" stroke-width="0.8"/>
-    <circle cx="1200" cy="198" r="80"  fill="none" stroke="rgba(56,189,248,0.090)" stroke-width="0.8"/>
+    <circle cx="1200" cy="198" r="210" fill="none" stroke="rgba(28,135,215,0.045)" stroke-width="0.8"/>
+    <circle cx="1200" cy="198" r="145" fill="none" stroke="rgba(28,135,215,0.065)" stroke-width="0.8"/>
+    <circle cx="1200" cy="198" r="80"  fill="none" stroke="rgba(28,135,215,0.090)" stroke-width="0.8"/>
 
     <!-- Inner pentagon edges -->
-    <line x1="1200" y1="53"  x2="1338" y2="153" stroke="rgba(56,189,248,0.18)" stroke-width="0.6"/>
-    <line x1="1338" y1="153" x2="1285" y2="315" stroke="rgba(56,189,248,0.18)" stroke-width="0.6"/>
-    <line x1="1285" y1="315" x2="1115" y2="315" stroke="rgba(56,189,248,0.18)" stroke-width="0.6"/>
-    <line x1="1115" y1="315" x2="1062" y2="153" stroke="rgba(56,189,248,0.18)" stroke-width="0.6"/>
-    <line x1="1062" y1="153" x2="1200" y2="53"  stroke="rgba(56,189,248,0.18)" stroke-width="0.6"/>
+    <line x1="1200" y1="53"  x2="1338" y2="153" stroke="rgba(28,135,215,0.18)" stroke-width="0.6"/>
+    <line x1="1338" y1="153" x2="1285" y2="315" stroke="rgba(28,135,215,0.18)" stroke-width="0.6"/>
+    <line x1="1285" y1="315" x2="1115" y2="315" stroke="rgba(28,135,215,0.18)" stroke-width="0.6"/>
+    <line x1="1115" y1="315" x2="1062" y2="153" stroke="rgba(28,135,215,0.18)" stroke-width="0.6"/>
+    <line x1="1062" y1="153" x2="1200" y2="53"  stroke="rgba(28,135,215,0.18)" stroke-width="0.6"/>
 
     <!-- Spokes to center -->
-    <line x1="1200" y1="198" x2="1200" y2="53"  stroke="rgba(56,189,248,0.14)" stroke-width="0.5"/>
-    <line x1="1200" y1="198" x2="1338" y2="153" stroke="rgba(56,189,248,0.14)" stroke-width="0.5"/>
-    <line x1="1200" y1="198" x2="1285" y2="315" stroke="rgba(56,189,248,0.14)" stroke-width="0.5"/>
-    <line x1="1200" y1="198" x2="1115" y2="315" stroke="rgba(56,189,248,0.14)" stroke-width="0.5"/>
-    <line x1="1200" y1="198" x2="1062" y2="153" stroke="rgba(56,189,248,0.14)" stroke-width="0.5"/>
+    <line x1="1200" y1="198" x2="1200" y2="53"  stroke="rgba(28,135,215,0.14)" stroke-width="0.5"/>
+    <line x1="1200" y1="198" x2="1338" y2="153" stroke="rgba(28,135,215,0.14)" stroke-width="0.5"/>
+    <line x1="1200" y1="198" x2="1285" y2="315" stroke="rgba(28,135,215,0.14)" stroke-width="0.5"/>
+    <line x1="1200" y1="198" x2="1115" y2="315" stroke="rgba(28,135,215,0.14)" stroke-width="0.5"/>
+    <line x1="1200" y1="198" x2="1062" y2="153" stroke="rgba(28,135,215,0.14)" stroke-width="0.5"/>
 
     <!-- Outer ring edges -->
-    <line x1="1338" y1="153" x2="1400" y2="128" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
-    <line x1="1400" y1="128" x2="1320" y2="362" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
-    <line x1="1285" y1="315" x2="1320" y2="362" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
-    <line x1="1115" y1="315" x2="1080" y2="362" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
-    <line x1="1062" y1="153" x2="1000" y2="128" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
-    <line x1="1000" y1="128" x2="1080" y2="362" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
-    <line x1="1200" y1="53"  x2="1400" y2="128" stroke="rgba(56,189,248,0.08)" stroke-width="0.4"/>
-    <line x1="1200" y1="53"  x2="1000" y2="128" stroke="rgba(56,189,248,0.08)" stroke-width="0.4"/>
+    <line x1="1338" y1="153" x2="1400" y2="128" stroke="rgba(28,135,215,0.10)" stroke-width="0.4"/>
+    <line x1="1400" y1="128" x2="1320" y2="362" stroke="rgba(28,135,215,0.10)" stroke-width="0.4"/>
+    <line x1="1285" y1="315" x2="1320" y2="362" stroke="rgba(28,135,215,0.10)" stroke-width="0.4"/>
+    <line x1="1115" y1="315" x2="1080" y2="362" stroke="rgba(28,135,215,0.10)" stroke-width="0.4"/>
+    <line x1="1062" y1="153" x2="1000" y2="128" stroke="rgba(28,135,215,0.10)" stroke-width="0.4"/>
+    <line x1="1000" y1="128" x2="1080" y2="362" stroke="rgba(28,135,215,0.10)" stroke-width="0.4"/>
+    <line x1="1200" y1="53"  x2="1400" y2="128" stroke="rgba(28,135,215,0.08)" stroke-width="0.4"/>
+    <line x1="1200" y1="53"  x2="1000" y2="128" stroke="rgba(28,135,215,0.08)" stroke-width="0.4"/>
 
     <!-- Inner nodes -->
     <g filter="url(#glow)">
       <!-- N0 top -->
-      <circle cx="1200" cy="53"  r="10" fill="rgba(56,189,248,0.06)"/>
+      <circle cx="1200" cy="53"  r="10" fill="rgba(28,135,215,0.06)"/>
       <circle cx="1200" cy="53"  r="3.2" fill="rgba(186,230,253,0.75)"/>
       <!-- N1 top-right -->
-      <circle cx="1338" cy="153" r="10" fill="rgba(56,189,248,0.06)"/>
+      <circle cx="1338" cy="153" r="10" fill="rgba(28,135,215,0.06)"/>
       <circle cx="1338" cy="153" r="3.2" fill="rgba(186,230,253,0.75)"/>
       <!-- N2 bottom-right -->
-      <circle cx="1285" cy="315" r="10" fill="rgba(56,189,248,0.06)"/>
+      <circle cx="1285" cy="315" r="10" fill="rgba(28,135,215,0.06)"/>
       <circle cx="1285" cy="315" r="3.2" fill="rgba(186,230,253,0.75)"/>
       <!-- N3 bottom-left -->
-      <circle cx="1115" cy="315" r="10" fill="rgba(56,189,248,0.06)"/>
+      <circle cx="1115" cy="315" r="10" fill="rgba(28,135,215,0.06)"/>
       <circle cx="1115" cy="315" r="3.2" fill="rgba(186,230,253,0.75)"/>
       <!-- N4 top-left -->
-      <circle cx="1062" cy="153" r="10" fill="rgba(56,189,248,0.06)"/>
+      <circle cx="1062" cy="153" r="10" fill="rgba(28,135,215,0.06)"/>
       <circle cx="1062" cy="153" r="3.2" fill="rgba(186,230,253,0.75)"/>
 
       <!-- Outer ring nodes -->
@@ -112,8 +112,8 @@
     </g>
 
     <!-- Center node -->
-    <circle cx="1200" cy="198" r="30" fill="rgba(56,189,248,0.06)"/>
-    <circle cx="1200" cy="198" r="18" fill="rgba(56,189,248,0.10)"/>
+    <circle cx="1200" cy="198" r="30" fill="rgba(28,135,215,0.06)"/>
+    <circle cx="1200" cy="198" r="18" fill="rgba(28,135,215,0.10)"/>
     <circle cx="1200" cy="198" r="7"  fill="rgba(186,230,253,0.90)" filter="url(#glow)"/>
 
     <!-- Left fade so mesh blends cleanly into content area -->
@@ -149,11 +149,11 @@
   <text font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
         font-size="21" font-weight="300" letter-spacing="4" y="191">
     <tspan x="166" fill="#e2e8f0">FIELDSTONE</tspan>
-    <tspan dx="16" fill="rgba(56,189,248,0.80)">ANALYTICS</tspan>
+    <tspan dx="16" fill="rgba(28,135,215,0.80)">ANALYTICS</tspan>
   </text>
 
   <!-- Divider -->
-  <line x1="166" y1="205" x2="560" y2="205" stroke="rgba(56,189,248,0.12)" stroke-width="0.6"/>
+  <line x1="166" y1="205" x2="560" y2="205" stroke="rgba(28,135,215,0.12)" stroke-width="0.6"/>
 
   <!-- Tagline -->
   <text x="166" y="226"

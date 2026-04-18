@@ -45,7 +45,7 @@ export default function Technology() {
       <div className="absolute inset-0 dot-bg opacity-50 pointer-events-none" />
       <div
         className="absolute top-0 inset-x-0 h-px pointer-events-none"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(56,189,248,0.12), transparent)' }}
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(28,135,215,0.12), transparent)' }}
       />
 
       <div className="relative max-w-7xl mx-auto">
@@ -58,8 +58,8 @@ export default function Technology() {
             transition={{ duration: 0.6 }}
             className="flex items-center gap-3 mb-6"
           >
-            <div className="h-px w-8 bg-sky-400/50" />
-            <span className="text-[11px] font-mono text-sky-400/65 tracking-[0.22em] uppercase">
+            <div className="h-px w-8 bg-brand-400/50" />
+            <span className="text-[11px] font-mono text-brand-400/65 tracking-[0.22em] uppercase">
               Technology & Approach
             </span>
           </motion.div>
@@ -73,7 +73,7 @@ export default function Technology() {
           >
             Simulation, AI, and
             <br />
-            <span className="text-sky-400/85">Data Working Together</span>
+            <span className="text-brand-400/85">Data Working Together</span>
           </motion.h2>
 
           <motion.p
@@ -103,11 +103,11 @@ export default function Technology() {
               className="card-hover group relative bg-[#0d0d16]/70 border border-white/[0.05] rounded-[3px] p-8 overflow-hidden"
             >
               {/* Top accent line */}
-              <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-sky-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-brand-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Code label */}
               <div className="flex items-center gap-3 mb-6">
-                <span className="px-2 py-1 bg-sky-400/[0.07] border border-sky-400/[0.12] rounded-[2px] text-[10px] font-mono text-sky-400/60 tracking-widest">
+                <span className="px-2 py-1 bg-brand-400/[0.07] border border-brand-400/[0.12] rounded-[2px] text-[10px] font-mono text-brand-400/60 tracking-widest">
                   {code}
                 </span>
               </div>
@@ -117,13 +117,13 @@ export default function Technology() {
 
               {/* Detail line */}
               <div className="flex items-center gap-3">
-                <div className="w-1 h-1 rounded-full bg-sky-400/40" />
-                <span className="text-[11px] font-mono text-sky-400/40 tracking-wide">{detail}</span>
+                <div className="w-1 h-1 rounded-full bg-brand-400/40" />
+                <span className="text-[11px] font-mono text-brand-400/40 tracking-wide">{detail}</span>
               </div>
 
               {/* Hover bg glow */}
               <div className="absolute bottom-0 left-0 w-40 h-40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{ background: 'radial-gradient(circle at 0% 100%, rgba(56,189,248,0.05) 0%, transparent 70%)' }}
+                style={{ background: 'radial-gradient(circle at 0% 100%, rgba(28,135,215,0.05) 0%, transparent 70%)' }}
               />
             </motion.div>
           ))}

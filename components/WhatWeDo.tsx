@@ -46,7 +46,7 @@ export default function WhatWeDo() {
       {/* Ambient blue glow — left side */}
       <div className="absolute left-1/4 top-1/2 -translate-y-1/2 w-[520px] h-[520px]
                       rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.030) 0%, transparent 70%)' }} />
+        style={{ background: 'radial-gradient(circle, rgba(28,135,215,0.030) 0%, transparent 70%)' }} />
 
       <div className="relative max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-center">
@@ -56,8 +56,8 @@ export default function WhatWeDo() {
 
             {/* Eyebrow */}
             <motion.div {...up(0)} className="flex items-center gap-3 mb-7">
-              <div className="h-px w-8 bg-sky-400/50" />
-              <span className="text-[11px] font-mono text-sky-400/65 tracking-[0.22em] uppercase">
+              <div className="h-px w-8 bg-brand-400/50" />
+              <span className="text-[11px] font-mono text-brand-400/65 tracking-[0.22em] uppercase">
                 Our Mission
               </span>
             </motion.div>
@@ -67,7 +67,7 @@ export default function WhatWeDo() {
               className="text-4xl md:text-5xl font-extralight text-slate-100 leading-[1.12] mb-7">
               Where Simulation Meets
               <br />
-              <span className="text-sky-400/90">Intelligent Prediction</span>
+              <span className="text-brand-400/90">Intelligent Prediction</span>
             </motion.h2>
 
             {/* Body paragraphs */}
@@ -105,14 +105,14 @@ export default function WhatWeDo() {
                       <span
                         className="inline-block w-1 h-1 rounded-full shrink-0 transition-all duration-300"
                         style={{
-                          background:  active ? '#38bdf8' : 'rgba(56,189,248,0.3)',
-                          boxShadow:   active ? '0 0 6px rgba(56,189,248,0.8)' : 'none',
+                          background:  active ? '#38bdf8' : 'rgba(28,135,215,0.3)',
+                          boxShadow:   active ? '0 0 6px rgba(28,135,215,0.8)' : 'none',
                           transform:   active ? 'scale(1.4)' : 'scale(1)',
                         }}
                       />
                       <span
                         className="text-sm font-mono transition-colors duration-300"
-                        style={{ color: active ? '#38bdf8' : 'rgba(56,189,248,0.6)' }}
+                        style={{ color: active ? '#38bdf8' : 'rgba(28,135,215,0.6)' }}
                       >
                         {value}
                       </span>

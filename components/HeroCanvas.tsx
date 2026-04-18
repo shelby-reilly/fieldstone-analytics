@@ -64,7 +64,7 @@ export default function HeroCanvas() {
       const scanY = (t * 30) % (h + 200) - 100
       const sg = ctx.createLinearGradient(0, scanY - 60, 0, scanY + 60)
       sg.addColorStop(0, 'transparent')
-      sg.addColorStop(0.5, 'rgba(56,189,248,0.025)')
+      sg.addColorStop(0.5, 'rgba(28,135,215,0.025)')
       sg.addColorStop(1, 'transparent')
       ctx.fillStyle = sg
       ctx.fillRect(0, scanY - 60, w, 120)
@@ -80,7 +80,7 @@ export default function HeroCanvas() {
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(56,189,248,${a})`
+            ctx.strokeStyle = `rgba(28,135,215,${a})`
             ctx.lineWidth = 0.4
             ctx.stroke()
           }
@@ -101,7 +101,7 @@ export default function HeroCanvas() {
 
         // Outer glow
         const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius * 7)
-        grd.addColorStop(0, `rgba(56,189,248,${o * 0.5})`)
+        grd.addColorStop(0, `rgba(28,135,215,${o * 0.5})`)
         grd.addColorStop(1, 'transparent')
         ctx.fillStyle = grd
         ctx.beginPath()

@@ -59,7 +59,7 @@ export default function Capabilities() {
       {/* Top glow */}
       <div
         className="absolute top-0 inset-x-0 h-px pointer-events-none"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(56,189,248,0.15), transparent)' }}
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(28,135,215,0.15), transparent)' }}
       />
 
       <div className="relative max-w-7xl mx-auto">
@@ -72,11 +72,11 @@ export default function Capabilities() {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-center gap-3 mb-6"
           >
-            <div className="h-px w-8 bg-sky-400/50" />
-            <span className="text-[11px] font-mono text-sky-400/65 tracking-[0.22em] uppercase">
+            <div className="h-px w-8 bg-brand-400/50" />
+            <span className="text-[11px] font-mono text-brand-400/65 tracking-[0.22em] uppercase">
               Core Capabilities
             </span>
-            <div className="h-px w-8 bg-sky-400/50" />
+            <div className="h-px w-8 bg-brand-400/50" />
           </motion.div>
 
           <motion.h2
@@ -88,7 +88,7 @@ export default function Capabilities() {
           >
             Built for Precision,
             <br />
-            <span className="text-sky-400/85">Designed for Complexity</span>
+            <span className="text-brand-400/85">Designed for Complexity</span>
           </motion.h2>
 
           <motion.p
@@ -130,7 +130,7 @@ export default function Capabilities() {
               {/* Icon */}
               <div
                 className="w-10 h-10 rounded-sm flex items-center justify-center mb-6 border border-white/[0.06]"
-                style={{ background: `rgba(${accent === '#38bdf8' ? '56,189,248' : '129,140,248'},0.07)` }}
+                style={{ background: `rgba(${accent === '#38bdf8' ? '28,135,215' : '129,140,248'},0.07)` }}
               >
                 <Icon
                   size={18}

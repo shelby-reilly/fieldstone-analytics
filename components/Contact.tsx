@@ -21,12 +21,12 @@ export default function Contact() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 55% 50% at 50% 50%, rgba(56,189,248,0.04) 0%, transparent 70%)',
+            'radial-gradient(ellipse 55% 50% at 50% 50%, rgba(28,135,215,0.04) 0%, transparent 70%)',
         }}
       />
       <div
         className="absolute top-0 inset-x-0 h-px pointer-events-none"
-        style={{ background: 'linear-gradient(90deg, transparent 5%, rgba(56,189,248,0.12) 50%, transparent 95%)' }}
+        style={{ background: 'linear-gradient(90deg, transparent 5%, rgba(28,135,215,0.12) 50%, transparent 95%)' }}
       />
 
       <div className="relative max-w-5xl mx-auto">
@@ -41,8 +41,8 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-3 mb-7"
             >
-              <div className="h-px w-8 bg-sky-400/50" />
-              <span className="text-[11px] font-mono text-sky-400/65 tracking-[0.22em] uppercase">
+              <div className="h-px w-8 bg-brand-400/50" />
+              <span className="text-[11px] font-mono text-brand-400/65 tracking-[0.22em] uppercase">
                 Get in Touch
               </span>
             </motion.div>
@@ -56,7 +56,7 @@ export default function Contact() {
             >
               Let&apos;s Build Something
               <br />
-              <span className="text-sky-400/85">Precise</span>
+              <span className="text-brand-400/85">Precise</span>
             </motion.h2>
 
             <motion.p
@@ -77,10 +77,10 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.26 }}
               className="flex items-center gap-3 text-sm"
             >
-              <Mail size={15} className="text-sky-400/60" />
+              <Mail size={15} className="text-brand-400/60" />
               <a
                 href="mailto:hello@fieldstoneanalytics.com"
-                className="font-mono text-slate-400 hover:text-sky-400 transition-colors duration-200"
+                className="font-mono text-slate-400 hover:text-brand-400 transition-colors duration-200"
               >
                 hello@fieldstoneanalytics.com
               </a>
@@ -119,7 +119,7 @@ export default function Contact() {
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-sky-400/40 focus:bg-white/[0.04] transition-all duration-200"
+                    className="w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-brand-400/40 focus:bg-white/[0.04] transition-all duration-200"
                     placeholder="Your name"
                   />
                 </div>
@@ -133,7 +133,7 @@ export default function Contact() {
                     required
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-sky-400/40 focus:bg-white/[0.04] transition-all duration-200"
+                    className="w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-brand-400/40 focus:bg-white/[0.04] transition-all duration-200"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -147,15 +147,15 @@ export default function Contact() {
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-sky-400/40 focus:bg-white/[0.04] transition-all duration-200 resize-none"
+                    className="w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-brand-400/40 focus:bg-white/[0.04] transition-all duration-200 resize-none"
                     placeholder="Tell us about your modeling challenges..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="group flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-medium text-[#050508] bg-sky-400 rounded-[2px] hover:bg-sky-300 transition-colors duration-200"
-                  style={{ boxShadow: '0 0 25px rgba(56,189,248,0.25)' }}
+                  className="group flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-medium text-[#050508] bg-brand-400 rounded-[2px] hover:bg-brand-300 transition-colors duration-200"
+                  style={{ boxShadow: '0 0 25px rgba(28,135,215,0.25)' }}
                 >
                   Start a Conversation
                   <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform duration-200" />

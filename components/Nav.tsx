@@ -85,7 +85,7 @@ export default function Nav() {
         {/* CTA */}
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2 text-[13px] font-medium text-sky-400 border border-sky-400/30 rounded-[2px] hover:bg-sky-400/8 hover:border-sky-400/60 transition-all duration-200 tracking-wide"
+          className="hidden md:inline-flex items-center gap-2 px-5 py-2 text-[13px] font-medium text-brand-400 border border-brand-400/30 rounded-[2px] hover:bg-brand-400/8 hover:border-brand-400/60 transition-all duration-200 tracking-wide"
         >
           Contact
         </a>
@@ -124,7 +124,7 @@ export default function Nav() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-slate-300 hover:text-sky-400 transition-colors text-sm tracking-wide"
+                  className="text-slate-300 hover:text-brand-400 transition-colors text-sm tracking-wide"
                 >
                   {l.label}
                 </a>
@@ -132,7 +132,7 @@ export default function Nav() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 px-4 py-2.5 text-sm text-sky-400 border border-sky-400/30 rounded-[2px] text-center hover:bg-sky-400/8 transition-colors"
+                className="mt-2 px-4 py-2.5 text-sm text-brand-400 border border-brand-400/30 rounded-[2px] text-center hover:bg-brand-400/8 transition-colors"
               >
                 Contact
               </a>

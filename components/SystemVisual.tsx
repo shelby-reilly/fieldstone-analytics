@@ -172,7 +172,7 @@ export default function SystemVisual({ hoveredPillar }: Props) {
     const py = par.current.y * 400 * D.edges * sy
 
     // Pillar-driven color
-    const col = pillarRef.current === 'predictive' ? '129,140,248' : '56,189,248'
+    const col = pillarRef.current === 'predictive' ? '129,140,248' : '28,135,215'
     const baseAlpha = pillarRef.current === 'efficient' ? 0.45 : 0.65
 
     for (const p of parts.current) {
@@ -268,8 +268,8 @@ export default function SystemVisual({ hoveredPillar }: Props) {
     hoveredPillar === 'predictive'
       ? `rgba(129,140,248,${baseAlpha + boostAlpha})`
       : hoveredPillar === 'twins'
-        ? `rgba(56,189,248,${baseAlpha + boostAlpha * 0.5})`
-        : `rgba(56,189,248,${baseAlpha})`
+        ? `rgba(28,135,215,${baseAlpha + boostAlpha * 0.5})`
+        : `rgba(28,135,215,${baseAlpha})`
 
   // Tooltip anchor position (percent of container, adjusted for overflow)
   const tooltipStyle = (id: number): React.CSSProperties => {
@@ -323,7 +323,7 @@ export default function SystemVisual({ hoveredPillar }: Props) {
               return (
                 <line key={i}
                   x1={a.x} y1={a.y} x2={b.x} y2={b.y}
-                  stroke={hl ? 'rgba(56,189,248,0.55)' : 'rgba(56,189,248,0.16)'}
+                  stroke={hl ? 'rgba(28,135,215,0.55)' : 'rgba(28,135,215,0.16)'}
                   strokeWidth={hl ? '0.9' : '0.45'}
                   style={{ transition: 'stroke 0.22s ease, stroke-width 0.22s ease' }} />
               )
@@ -345,7 +345,7 @@ export default function SystemVisual({ hoveredPillar }: Props) {
                   {/* Outer glow disk */}
                   <circle cx={n.x} cy={n.y}
                     r={hov ? 22 : gl === 'medium' ? 15 : 12}
-                    fill={`rgba(56,189,248,${hov ? 0.13 : gl === 'medium' ? 0.07 : 0.035})`}
+                    fill={`rgba(28,135,215,${hov ? 0.13 : gl === 'medium' ? 0.07 : 0.035})`}
                     style={{ transition: 'r 0.3s ease, fill 0.3s ease' }} />
 
                   {/* Core dot */}
@@ -357,7 +357,7 @@ export default function SystemVisual({ hoveredPillar }: Props) {
                   {/* Hover ring pulse */}
                   {hov && (
                     <circle cx={n.x} cy={n.y} r="9.5" fill="none"
-                      stroke="rgba(56,189,248,0.35)" strokeWidth="0.6" />
+                      stroke="rgba(28,135,215,0.35)" strokeWidth="0.6" />
                   )}
                 </g>
               )
@@ -377,13 +377,13 @@ export default function SystemVisual({ hoveredPillar }: Props) {
                   {/* Outer ambient field */}
                   <circle cx={n.x} cy={n.y}
                     r={active ? 38 : 26}
-                    fill={`rgba(56,189,248,${active ? 0.08 : 0.04})`}
+                    fill={`rgba(28,135,215,${active ? 0.08 : 0.04})`}
                     style={{ transition: 'r 0.5s ease, fill 0.5s ease' }} />
 
                   {/* Mid halo */}
                   <circle cx={n.x} cy={n.y}
                     r={active ? 22 : 15}
-                    fill={`rgba(56,189,248,${active ? 0.14 : 0.07})`}
+                    fill={`rgba(28,135,215,${active ? 0.14 : 0.07})`}
                     style={{ transition: 'r 0.35s ease, fill 0.35s ease' }} />
 
                   {/* Core */}
@@ -395,7 +395,7 @@ export default function SystemVisual({ hoveredPillar }: Props) {
                   {/* Rotating dashed orbit ring — only on direct hover */}
                   {hov && (
                     <circle cx={n.x} cy={n.y} r="30" fill="none"
-                      stroke="rgba(56,189,248,0.32)" strokeWidth="0.7"
+                      stroke="rgba(28,135,215,0.32)" strokeWidth="0.7"
                       strokeDasharray="6 3"
                       style={{
                         transformBox:    'fill-box',
@@ -413,7 +413,7 @@ export default function SystemVisual({ hoveredPillar }: Props) {
             {/* Top: physical system marker */}
             <text x="200" y="17" textAnchor="middle" fontSize="7.5"
               fontFamily="ui-monospace,monospace" letterSpacing="2.5"
-              fill={hoveredPillar === 'twins' ? 'rgba(56,189,248,0.85)' : 'rgba(56,189,248,0.50)'}
+              fill={hoveredPillar === 'twins' ? 'rgba(28,135,215,0.85)' : 'rgba(28,135,215,0.50)'}
               style={{ transition: 'fill 0.65s ease' }}>
               PHYSICAL SYSTEM
             </text>
@@ -421,7 +421,7 @@ export default function SystemVisual({ hoveredPillar }: Props) {
             {/* Bottom: digital twin marker */}
             <text x="200" y="397" textAnchor="middle" fontSize="7.5"
               fontFamily="ui-monospace,monospace" letterSpacing="2.5"
-              fill={hoveredPillar === 'twins' ? 'rgba(56,189,248,0.85)' : 'rgba(56,189,248,0.50)'}
+              fill={hoveredPillar === 'twins' ? 'rgba(28,135,215,0.85)' : 'rgba(28,135,215,0.50)'}
               style={{ transition: 'fill 0.65s ease' }}>
               DIGITAL TWIN
             </text>
@@ -430,8 +430,8 @@ export default function SystemVisual({ hoveredPillar }: Props) {
             <text x="200" y="220" textAnchor="middle" fontSize="8"
               fontFamily="ui-monospace,monospace" letterSpacing="1"
               fill={hovNode === 5 || hoveredPillar === 'twins'
-                ? 'rgba(56,189,248,0.75)'
-                : 'rgba(56,189,248,0.42)'}
+                ? 'rgba(28,135,215,0.75)'
+                : 'rgba(28,135,215,0.42)'}
               style={{ transition: 'fill 0.35s ease' }}>
               Δx → Δf
             </text>
@@ -450,7 +450,7 @@ export default function SystemVisual({ hoveredPillar }: Props) {
             height:         '130px',
             transform:      'translate(-50%,-50%)',
             opacity:        0,
-            background:     'radial-gradient(circle, rgba(56,189,248,0.055) 0%, transparent 70%)',
+            background:     'radial-gradient(circle, rgba(28,135,215,0.055) 0%, transparent 70%)',
             borderRadius:   '50%',
             transition:     'opacity 0.4s ease',
           }} />
@@ -467,7 +467,7 @@ export default function SystemVisual({ hoveredPillar }: Props) {
           <div className="text-[10px] font-mono text-slate-500 mt-0.5">Δt = 0.02 ms</div>
         </div>
         <div className="absolute bottom-4 right-4 text-right pointer-events-none">
-          <div className="text-[10px] font-mono text-sky-400/50 tracking-widest uppercase mb-0.5">
+          <div className="text-[10px] font-mono text-brand-400/50 tracking-widest uppercase mb-0.5">
             Predictive Output
           </div>
           <div className="text-[10px] font-mono text-slate-500">STATE_v3.1</div>
@@ -476,9 +476,9 @@ export default function SystemVisual({ hoveredPillar }: Props) {
         {/* ── Node tooltip ── */}
         {hovNode !== null && (
           <div className="pointer-events-none z-10" style={tooltipStyle(hovNode)}>
-            <div className="px-3 py-2 bg-[#070710]/95 border border-sky-400/20 rounded-[2px] whitespace-nowrap"
-              style={{ boxShadow: '0 8px 28px rgba(0,0,0,0.65), 0 0 0 1px rgba(56,189,248,0.06)' }}>
-              <div className="text-[9px] font-mono text-sky-400/50 tracking-[0.2em] uppercase mb-0.5">
+            <div className="px-3 py-2 bg-[#070710]/95 border border-brand-400/20 rounded-[2px] whitespace-nowrap"
+              style={{ boxShadow: '0 8px 28px rgba(0,0,0,0.65), 0 0 0 1px rgba(28,135,215,0.06)' }}>
+              <div className="text-[9px] font-mono text-brand-400/50 tracking-[0.2em] uppercase mb-0.5">
                 {ALL[hovNode].tip[0]}
               </div>
               <div className="text-[12px] font-mono text-slate-200 tracking-wide">

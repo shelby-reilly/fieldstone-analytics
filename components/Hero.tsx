@@ -18,7 +18,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 80% 55% at 50% 38%, rgba(56,189,248,0.05) 0%, transparent 70%)',
+            'radial-gradient(ellipse 80% 55% at 50% 38%, rgba(28,135,215,0.05) 0%, transparent 70%)',
         }}
       />
 
@@ -36,13 +36,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 mb-10 rounded-full border border-sky-400/20 bg-sky-400/[0.04] backdrop-blur-sm"
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 mb-10 rounded-full border border-brand-400/20 bg-brand-400/[0.04] backdrop-blur-sm"
         >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-50" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-400" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-50" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-400" />
           </span>
-          <span className="text-[11px] font-mono text-sky-400/75 tracking-[0.18em] uppercase">
+          <span className="text-[11px] font-mono text-brand-400/75 tracking-[0.18em] uppercase">
             Digital Twin Platforms · Predictive Modeling
           </span>
         </motion.div>
@@ -57,8 +57,8 @@ export default function Hero() {
           Predictive Intelligence
           <br />
           <span
-            className="font-light text-sky-400"
-            style={{ textShadow: '0 0 60px rgba(56,189,248,0.35)' }}
+            className="font-light text-brand-400"
+            style={{ textShadow: '0 0 60px rgba(28,135,215,0.35)' }}
           >
             For Physical Systems
           </span>
@@ -85,14 +85,14 @@ export default function Hero() {
         >
           <a
             href="#what-we-do"
-            className="px-9 py-3.5 text-sm font-medium text-[#050508] bg-sky-400 rounded-[2px] hover:bg-sky-300 transition-colors duration-200 tracking-wide"
-            style={{ boxShadow: '0 0 35px rgba(56,189,248,0.35), 0 8px 24px rgba(0,0,0,0.3)' }}
+            className="px-9 py-3.5 text-sm font-medium text-[#050508] bg-brand-400 rounded-[2px] hover:bg-brand-300 transition-colors duration-200 tracking-wide"
+            style={{ boxShadow: '0 0 35px rgba(28,135,215,0.35), 0 8px 24px rgba(0,0,0,0.3)' }}
           >
             Explore Our Platform
           </a>
           <a
             href="#contact"
-            className="px-9 py-3.5 text-sm font-medium text-slate-300 border border-white/10 rounded-[2px] hover:border-sky-400/40 hover:text-sky-400 transition-all duration-200 tracking-wide"
+            className="px-9 py-3.5 text-sm font-medium text-slate-300 border border-white/10 rounded-[2px] hover:border-brand-400/40 hover:text-brand-400 transition-all duration-200 tracking-wide"
           >
             Get in Touch
           </a>

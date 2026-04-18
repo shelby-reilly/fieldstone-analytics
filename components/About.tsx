@@ -10,18 +10,18 @@ export default function About() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(56,189,248,0.03) 0%, transparent 70%)',
+            'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(28,135,215,0.03) 0%, transparent 70%)',
         }}
       />
 
       {/* Horizontal rules */}
       <div
         className="absolute top-0 inset-x-0 h-px pointer-events-none"
-        style={{ background: 'linear-gradient(90deg, transparent 10%, rgba(56,189,248,0.1) 50%, transparent 90%)' }}
+        style={{ background: 'linear-gradient(90deg, transparent 10%, rgba(28,135,215,0.1) 50%, transparent 90%)' }}
       />
       <div
         className="absolute bottom-0 inset-x-0 h-px pointer-events-none"
-        style={{ background: 'linear-gradient(90deg, transparent 10%, rgba(56,189,248,0.1) 50%, transparent 90%)' }}
+        style={{ background: 'linear-gradient(90deg, transparent 10%, rgba(28,135,215,0.1) 50%, transparent 90%)' }}
       />
 
       <div className="relative max-w-4xl mx-auto text-center">
@@ -32,11 +32,11 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="flex items-center justify-center gap-3 mb-10"
         >
-          <div className="h-px w-8 bg-sky-400/40" />
-          <span className="text-[11px] font-mono text-sky-400/55 tracking-[0.22em] uppercase">
+          <div className="h-px w-8 bg-brand-400/40" />
+          <span className="text-[11px] font-mono text-brand-400/55 tracking-[0.22em] uppercase">
             About & Vision
           </span>
-          <div className="h-px w-8 bg-sky-400/40" />
+          <div className="h-px w-8 bg-brand-400/40" />
         </motion.div>
 
         <motion.blockquote
@@ -47,12 +47,12 @@ export default function About() {
           className="text-3xl md:text-4xl lg:text-[2.6rem] font-extralight text-slate-200 leading-[1.3] mb-10"
         >
           &ldquo;The physical world generates{' '}
-          <span className="text-sky-400/80">enormous complexity.</span>
+          <span className="text-brand-400/80">enormous complexity.</span>
           <br />
           Our mission is to build the modeling infrastructure{' '}
           <br className="hidden md:block" />
           that makes that complexity{' '}
-          <span className="text-sky-400/80">tractable.&rdquo;</span>
+          <span className="text-brand-400/80">tractable.&rdquo;</span>
         </motion.blockquote>
 
         <motion.p
@@ -110,7 +110,7 @@ export default function About() {
               <span className="text-slate-300">Fieldstone</span>
               <span style={{ color: '#1D8FE4' }} className="ml-2">Analytics</span>
             </div>
-            <div className="text-[11px] font-mono text-sky-400/40 tracking-widest mt-0.5 uppercase">
+            <div className="text-[11px] font-mono text-brand-400/40 tracking-widest mt-0.5 uppercase">
               Intelligent Modeling Platforms
             </div>
           </div>

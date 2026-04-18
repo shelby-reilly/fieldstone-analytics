@@ -11,6 +11,11 @@ module.exports = {
         bg: '#050508',
         surface: '#0d0d16',
         'surface-raised': '#131320',
+        brand: {
+          300: '#5AAEE8',
+          400: '#1C87D7',
+          500: '#1570B8',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
