@@ -41,7 +41,7 @@ export default function Nav() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
-            className="shrink-0 transition-opacity duration-300 group-hover:opacity-90"
+            className="shrink-0 transition-all duration-200 group-hover:scale-110 group-hover:brightness-125"
           >
             <rect
               x="30" y="30" width="82" height="82"
