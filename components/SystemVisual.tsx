@@ -413,7 +413,7 @@ export default function SystemVisual({ hoveredPillar }: Props) {
             {/* Top: physical system marker */}
             <text x="200" y="17" textAnchor="middle" fontSize="7.5"
               fontFamily="ui-monospace,monospace" letterSpacing="2.5"
-              fill={hoveredPillar === 'twins' ? 'rgba(56,189,248,0.65)' : 'rgba(56,189,248,0.25)'}
+              fill={hoveredPillar === 'twins' ? 'rgba(56,189,248,0.85)' : 'rgba(56,189,248,0.50)'}
               style={{ transition: 'fill 0.65s ease' }}>
               PHYSICAL SYSTEM
             </text>
@@ -421,7 +421,7 @@ export default function SystemVisual({ hoveredPillar }: Props) {
             {/* Bottom: digital twin marker */}
             <text x="200" y="397" textAnchor="middle" fontSize="7.5"
               fontFamily="ui-monospace,monospace" letterSpacing="2.5"
-              fill={hoveredPillar === 'twins' ? 'rgba(56,189,248,0.65)' : 'rgba(56,189,248,0.20)'}
+              fill={hoveredPillar === 'twins' ? 'rgba(56,189,248,0.85)' : 'rgba(56,189,248,0.50)'}
               style={{ transition: 'fill 0.65s ease' }}>
               DIGITAL TWIN
             </text>
@@ -430,8 +430,8 @@ export default function SystemVisual({ hoveredPillar }: Props) {
             <text x="200" y="220" textAnchor="middle" fontSize="8"
               fontFamily="ui-monospace,monospace" letterSpacing="1"
               fill={hovNode === 5 || hoveredPillar === 'twins'
-                ? 'rgba(56,189,248,0.55)'
-                : 'rgba(56,189,248,0.20)'}
+                ? 'rgba(56,189,248,0.75)'
+                : 'rgba(56,189,248,0.42)'}
               style={{ transition: 'fill 0.35s ease' }}>
               Δx → Δf
             </text>
@@ -464,10 +464,10 @@ export default function SystemVisual({ hoveredPillar }: Props) {
               Model Active
             </span>
           </div>
-          <div className="text-[10px] font-mono text-slate-700 mt-0.5">Δt = 0.02 ms</div>
+          <div className="text-[10px] font-mono text-slate-500 mt-0.5">Δt = 0.02 ms</div>
         </div>
         <div className="absolute bottom-4 right-4 text-right pointer-events-none">
-          <div className="text-[10px] font-mono text-slate-700">STATE_v3.1</div>
+          <div className="text-[10px] font-mono text-slate-500">STATE_v3.1</div>
         </div>
 
         {/* ── Node tooltip ── */}
