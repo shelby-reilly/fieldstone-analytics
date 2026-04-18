@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
+  <defs>
+
+    <!-- Subtle grid -->
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <line x1="64" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.022)" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="0" y2="64" stroke="rgba(255,255,255,0.022)" stroke-width="0.5"/>
+    </pattern>
+
+    <!-- Right-side ambient glow -->
+    <radialGradient id="glowRight" cx="78%" cy="50%" r="42%">
+      <stop offset="0%"   stop-color="rgba(56,189,248,0.07)"/>
+      <stop offset="100%" stop-color="rgba(56,189,248,0)"/>
+    </radialGradient>
+
+    <!-- Fade the node mesh into the left content area -->
+    <linearGradient id="meshFade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#050508" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#050508" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Node glow filter -->
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip the mesh to the right portion -->
+    <clipPath id="rightArea">
+      <rect x="620" y="0" width="964" height="396"/>
+    </clipPath>
+
+  </defs>
+
+  <!-- ── Base background ── -->
+  <rect width="1584" height="396" fill="#050508"/>
+
+  <!-- Grid overlay -->
+  <rect width="1584" height="396" fill="url(#grid)"/>
+
+  <!-- Ambient glow -->
+  <rect width="1584" height="396" fill="url(#glowRight)"/>
+
+  <!-- Top + bottom border lines -->
+  <line x1="0" y1="0.5"   x2="1584" y2="0.5"   stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="0" y1="395.5" x2="1584" y2="395.5" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- ── Node mesh (right side, clipped) ── -->
+  <!--
+    Pentagon mesh centered at (1200, 198), inner r=145, outer r=205
+    Inner nodes:  N0(1200,53) N1(1338,153) N2(1285,315) N3(1115,315) N4(1062,153)
+    Outer nodes:  O1(1400,128) O2(1320,362) O3(1080,362) O4(1000,128)
+    (O0 is above viewport, omitted)
+  -->
+  <g clip-path="url(#rightArea)">
+
+    <!-- Concentric rings -->
+    <circle cx="1200" cy="198" r="210" fill="none" stroke="rgba(56,189,248,0.045)" stroke-width="0.8"/>
+    <circle cx="1200" cy="198" r="145" fill="none" stroke="rgba(56,189,248,0.065)" stroke-width="0.8"/>
+    <circle cx="1200" cy="198" r="80"  fill="none" stroke="rgba(56,189,248,0.090)" stroke-width="0.8"/>
+
+    <!-- Inner pentagon edges -->
+    <line x1="1200" y1="53"  x2="1338" y2="153" stroke="rgba(56,189,248,0.18)" stroke-width="0.6"/>
+    <line x1="1338" y1="153" x2="1285" y2="315" stroke="rgba(56,189,248,0.18)" stroke-width="0.6"/>
+    <line x1="1285" y1="315" x2="1115" y2="315" stroke="rgba(56,189,248,0.18)" stroke-width="0.6"/>
+    <line x1="1115" y1="315" x2="1062" y2="153" stroke="rgba(56,189,248,0.18)" stroke-width="0.6"/>
+    <line x1="1062" y1="153" x2="1200" y2="53"  stroke="rgba(56,189,248,0.18)" stroke-width="0.6"/>
+
+    <!-- Spokes to center -->
+    <line x1="1200" y1="198" x2="1200" y2="53"  stroke="rgba(56,189,248,0.14)" stroke-width="0.5"/>
+    <line x1="1200" y1="198" x2="1338" y2="153" stroke="rgba(56,189,248,0.14)" stroke-width="0.5"/>
+    <line x1="1200" y1="198" x2="1285" y2="315" stroke="rgba(56,189,248,0.14)" stroke-width="0.5"/>
+    <line x1="1200" y1="198" x2="1115" y2="315" stroke="rgba(56,189,248,0.14)" stroke-width="0.5"/>
+    <line x1="1200" y1="198" x2="1062" y2="153" stroke="rgba(56,189,248,0.14)" stroke-width="0.5"/>
+
+    <!-- Outer ring edges -->
+    <line x1="1338" y1="153" x2="1400" y2="128" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
+    <line x1="1400" y1="128" x2="1320" y2="362" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
+    <line x1="1285" y1="315" x2="1320" y2="362" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
+    <line x1="1115" y1="315" x2="1080" y2="362" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
+    <line x1="1062" y1="153" x2="1000" y2="128" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
+    <line x1="1000" y1="128" x2="1080" y2="362" stroke="rgba(56,189,248,0.10)" stroke-width="0.4"/>
+    <line x1="1200" y1="53"  x2="1400" y2="128" stroke="rgba(56,189,248,0.08)" stroke-width="0.4"/>
+    <line x1="1200" y1="53"  x2="1000" y2="128" stroke="rgba(56,189,248,0.08)" stroke-width="0.4"/>
+
+    <!-- Inner nodes -->
+    <g filter="url(#glow)">
+      <!-- N0 top -->
+      <circle cx="1200" cy="53"  r="10" fill="rgba(56,189,248,0.06)"/>
+      <circle cx="1200" cy="53"  r="3.2" fill="rgba(186,230,253,0.75)"/>
+      <!-- N1 top-right -->
+      <circle cx="1338" cy="153" r="10" fill="rgba(56,189,248,0.06)"/>
+      <circle cx="1338" cy="153" r="3.2" fill="rgba(186,230,253,0.75)"/>
+      <!-- N2 bottom-right -->
+      <circle cx="1285" cy="315" r="10" fill="rgba(56,189,248,0.06)"/>
+      <circle cx="1285" cy="315" r="3.2" fill="rgba(186,230,253,0.75)"/>
+      <!-- N3 bottom-left -->
+      <circle cx="1115" cy="315" r="10" fill="rgba(56,189,248,0.06)"/>
+      <circle cx="1115" cy="315" r="3.2" fill="rgba(186,230,253,0.75)"/>
+      <!-- N4 top-left -->
+      <circle cx="1062" cy="153" r="10" fill="rgba(56,189,248,0.06)"/>
+      <circle cx="1062" cy="153" r="3.2" fill="rgba(186,230,253,0.75)"/>
+
+      <!-- Outer ring nodes -->
+      <circle cx="1400" cy="128" r="2.2" fill="rgba(186,230,253,0.45)"/>
+      <circle cx="1320" cy="362" r="2.2" fill="rgba(186,230,253,0.45)"/>
+      <circle cx="1080" cy="362" r="2.2" fill="rgba(186,230,253,0.45)"/>
+      <circle cx="1000" cy="128" r="2.2" fill="rgba(186,230,253,0.45)"/>
+    </g>
+
+    <!-- Center node -->
+    <circle cx="1200" cy="198" r="30" fill="rgba(56,189,248,0.06)"/>
+    <circle cx="1200" cy="198" r="18" fill="rgba(56,189,248,0.10)"/>
+    <circle cx="1200" cy="198" r="7"  fill="rgba(186,230,253,0.90)" filter="url(#glow)"/>
+
+    <!-- Left fade so mesh blends cleanly into content area -->
+    <rect x="620" y="0" width="220" height="396" fill="url(#meshFade)"/>
+
+  </g>
+
+  <!-- ── Left content ── -->
+
+  <!-- Icon mark — 142×142 viewBox scaled to 68px (68/142 = 0.479) -->
+  <!-- Vertically: icon height = 68px, center at y=198 → top = 198-34 = 164 -->
+  <g transform="translate(80, 162) scale(0.479)">
+    <rect x="30" y="30" width="82" height="82" transform="rotate(45 71 71)"
+      fill="none" stroke="#0D7AC7" stroke-width="4" opacity="0.95"/>
+    <circle cx="71" cy="71" r="3.8"  fill="#1D8FE4"/>
+    <circle cx="78" cy="71" r="3.4"  fill="rgba(29,143,228,0.94)"/>
+    <circle cx="82" cy="77" r="3.2"  fill="rgba(29,143,228,0.90)"/>
+    <circle cx="81" cy="85" r="3.0"  fill="rgba(29,143,228,0.86)"/>
+    <circle cx="74" cy="91" r="2.8"  fill="rgba(29,143,228,0.82)"/>
+    <circle cx="64" cy="92" r="2.6"  fill="rgba(29,143,228,0.78)"/>
+    <circle cx="55" cy="87" r="2.5"  fill="rgba(29,143,228,0.74)"/>
+    <circle cx="49" cy="78" r="2.3"  fill="rgba(29,143,228,0.70)"/>
+    <circle cx="48" cy="67" r="2.2"  fill="rgba(29,143,228,0.66)"/>
+    <circle cx="53" cy="57" r="2.1"  fill="rgba(29,143,228,0.62)"/>
+    <circle cx="62" cy="50" r="2.0"  fill="rgba(29,143,228,0.58)"/>
+    <circle cx="74" cy="48" r="1.95" fill="rgba(29,143,228,0.54)"/>
+    <circle cx="86" cy="52" r="1.9"  fill="rgba(29,143,228,0.50)"/>
+    <circle cx="95" cy="61" r="1.85" fill="rgba(29,143,228,0.46)"/>
+  </g>
+
+  <!-- Wordmark (icon right edge = 80+68 = 148, gap 18 → text x=166) -->
+  <!-- Icon center y = 198 → wordmark baseline ≈ 192, tagline ≈ 222, sub ≈ 244 -->
+  <text font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="21" font-weight="300" letter-spacing="4" y="191">
+    <tspan x="166" fill="#e2e8f0">FIELDSTONE</tspan>
+    <tspan dx="16" fill="rgba(56,189,248,0.80)">ANALYTICS</tspan>
+  </text>
+
+  <!-- Divider -->
+  <line x1="166" y1="205" x2="560" y2="205" stroke="rgba(56,189,248,0.12)" stroke-width="0.6"/>
+
+  <!-- Tagline -->
+  <text x="166" y="226"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="14" font-weight="300" letter-spacing="0.5"
+        fill="rgba(148,163,184,0.85)">
+    Predictive Intelligence for Physical Systems
+  </text>
+
+  <!-- Sub-tagline -->
+  <text x="166" y="250"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="9.5" font-weight="300" letter-spacing="2"
+        fill="rgba(100,116,139,0.70)">
+    DIGITAL TWIN PLATFORMS  ·  ORTHOPEDIC &amp; ROBOTIC APPLICATIONS
+  </text>
+
+</svg>
