@@ -81,7 +81,7 @@ export default function Technology() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.18 }}
-            className="text-slate-500 font-light leading-relaxed text-[17px]"
+            className="text-slate-400 font-light leading-relaxed text-[17px]"
           >
             Our platform methodology combines four complementary technical pillars —
             each designed to maximize predictive accuracy while minimizing data and compute requirements.
@@ -113,7 +113,7 @@ export default function Technology() {
               </div>
 
               <h3 className="text-xl font-light text-slate-200 mb-4 leading-snug">{title}</h3>
-              <p className="text-sm text-slate-500 leading-relaxed font-light mb-6">{body}</p>
+              <p className="text-sm text-slate-400 leading-relaxed font-light mb-6">{body}</p>
 
               {/* Detail line */}
               <div className="flex items-center gap-3">

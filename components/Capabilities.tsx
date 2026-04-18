@@ -96,7 +96,7 @@ export default function Capabilities() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.18 }}
-            className="max-w-xl mx-auto text-slate-500 font-light leading-relaxed"
+            className="max-w-xl mx-auto text-slate-400 font-light leading-relaxed"
           >
             Five interconnected platform capabilities — from twin architecture to domain-specific applications.
           </motion.p>
@@ -139,7 +139,7 @@ export default function Capabilities() {
               </div>
 
               <h3 className="text-[17px] font-light text-slate-200 mb-3 leading-snug">{title}</h3>
-              <p className="text-sm text-slate-500 leading-relaxed font-light">{body}</p>
+              <p className="text-sm text-slate-400 leading-relaxed font-light">{body}</p>
 
               {/* Hover corner glow */}
               <div

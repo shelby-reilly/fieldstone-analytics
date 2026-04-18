@@ -113,7 +113,7 @@ export default function WhyItMatters() {
               </div>
 
               <h3 className="text-2xl font-extralight text-slate-100 mb-4 leading-snug">{heading}</h3>
-              <p className="text-sm text-slate-500 leading-relaxed font-light">{body}</p>
+              <p className="text-sm text-slate-400 leading-relaxed font-light">{body}</p>
 
               <div className="mt-6 flex items-center gap-2">
                 <div className="h-px flex-1 bg-white/[0.04]" />

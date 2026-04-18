@@ -79,7 +79,7 @@ export default function WhatWeDo() {
               and robotic systems.
             </motion.p>
 
-            <motion.p {...up(0.22)} className="text-slate-500 leading-relaxed mb-12">
+            <motion.p {...up(0.22)} className="text-slate-400 leading-relaxed mb-12">
               Our approach reduces the gap between model and reality — giving engineers and
               researchers a reliable predictive lens before physical testing begins, enabling faster
               iteration, higher-confidence decisions, and scalable insight from limited data.

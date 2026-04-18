@@ -60,7 +60,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="text-slate-500 font-light leading-relaxed text-lg max-w-2xl mx-auto mb-14"
+          className="text-slate-400 font-light leading-relaxed text-lg max-w-2xl mx-auto mb-14"
         >
           We believe the next generation of medical devices and robotic systems will be built with
           simulation at their core. Fieldstone Analytics exists to make that future more accessible,

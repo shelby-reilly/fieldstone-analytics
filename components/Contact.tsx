@@ -80,7 +80,7 @@ export default function Contact() {
               <Mail size={15} className="text-sky-400/60" />
               <a
                 href="mailto:hello@fieldstoneanalytics.com"
-                className="font-mono text-slate-500 hover:text-sky-400 transition-colors duration-200"
+                className="font-mono text-slate-400 hover:text-sky-400 transition-colors duration-200"
               >
                 hello@fieldstoneanalytics.com
               </a>
@@ -103,7 +103,7 @@ export default function Contact() {
                   <span className="text-emerald-400 text-lg">✓</span>
                 </div>
                 <h3 className="text-xl font-light text-slate-200 mb-2">Message Received</h3>
-                <p className="text-sm text-slate-500 font-light">We&apos;ll be in touch shortly.</p>
+                <p className="text-sm text-slate-400 font-light">We&apos;ll be in touch shortly.</p>
               </div>
             ) : (
               <form
@@ -111,7 +111,7 @@ export default function Contact() {
                 className="bg-[#0d0d16]/60 border border-white/[0.05] rounded-[3px] p-8 flex flex-col gap-5"
               >
                 <div>
-                  <label className="block text-[11px] font-mono text-slate-600 tracking-widest uppercase mb-2">
+                  <label className="block text-[11px] font-mono text-slate-500 tracking-widest uppercase mb-2">
                     Name
                   </label>
                   <input
@@ -125,7 +125,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono text-slate-600 tracking-widest uppercase mb-2">
+                  <label className="block text-[11px] font-mono text-slate-500 tracking-widest uppercase mb-2">
                     Email
                   </label>
                   <input
@@ -139,7 +139,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono text-slate-600 tracking-widest uppercase mb-2">
+                  <label className="block text-[11px] font-mono text-slate-500 tracking-widest uppercase mb-2">
                     Message
                   </label>
                   <textarea
