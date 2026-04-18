@@ -467,6 +467,9 @@ export default function SystemVisual({ hoveredPillar }: Props) {
           <div className="text-[10px] font-mono text-slate-500 mt-0.5">Δt = 0.02 ms</div>
         </div>
         <div className="absolute bottom-4 right-4 text-right pointer-events-none">
+          <div className="text-[10px] font-mono text-sky-400/50 tracking-widest uppercase mb-0.5">
+            Predictive Output
+          </div>
           <div className="text-[10px] font-mono text-slate-500">STATE_v3.1</div>
         </div>
 
