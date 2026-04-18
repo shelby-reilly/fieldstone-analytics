@@ -49,7 +49,7 @@ export default function About() {
           &ldquo;The physical world generates{' '}
           <span className="text-sky-400/80">enormous complexity.</span>
           <br />
-          Our mission is to build the modeling infrastructure
+          Our mission is to build the modeling infrastructure{' '}
           <br className="hidden md:block" />
           that makes that complexity{' '}
           <span className="text-sky-400/80">tractable.&rdquo;</span>
