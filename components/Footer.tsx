@@ -43,7 +43,7 @@ export default function Footer() {
             <circle cx="95" cy="61" r="1.85" fill="rgba(29,143,228,0.46)" />
           </svg>
           <span className="text-xs tracking-[0.18em] uppercase text-slate-500">
-            Fieldstone<span className="text-sky-400/50 ml-2">Analytics</span>
+            Fieldstone<span style={{ color: '#1D8FE4', opacity: 0.75 }} className="ml-2">Analytics</span>
           </span>
         </a>
 

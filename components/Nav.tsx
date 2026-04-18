@@ -65,7 +65,7 @@ export default function Nav() {
           </svg>
           <span className="text-sm tracking-[0.18em] uppercase text-slate-200 font-light">
             Fieldstone
-            <span className="text-sky-400/70 ml-2">Analytics</span>
+            <span style={{ color: '#1D8FE4' }} className="ml-2">Analytics</span>
           </span>
         </a>
 

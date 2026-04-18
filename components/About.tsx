@@ -106,8 +106,9 @@ export default function About() {
             <circle cx="95" cy="61" r="1.85" fill="rgba(29,143,228,0.46)" />
           </svg>
           <div className="text-left">
-            <div className="text-sm tracking-[0.2em] uppercase text-slate-300 font-light">
-              Fieldstone Analytics
+            <div className="text-sm tracking-[0.2em] uppercase font-light">
+              <span className="text-slate-300">Fieldstone</span>
+              <span style={{ color: '#1D8FE4' }} className="ml-2">Analytics</span>
             </div>
             <div className="text-[11px] font-mono text-sky-400/40 tracking-widest mt-0.5 uppercase">
               Intelligent Modeling Platforms
