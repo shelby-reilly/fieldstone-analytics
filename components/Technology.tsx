@@ -100,25 +100,29 @@ export default function Technology() {
             <motion.div
               key={title}
               variants={itemVariants}
-              className="card-hover group relative bg-[#0d0d16]/70 border border-white/[0.05] rounded-[3px] p-8 overflow-hidden"
+              className="interactive-panel group relative bg-[#0d0d16]/70 border border-white/[0.05] rounded-[3px] p-8 overflow-hidden"
+              style={{ ['--panel-glow-rgb' as string]: '56 189 248' }}
             >
               {/* Top accent line */}
-              <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-brand-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="panel-accent-line absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-brand-400/30 to-transparent" />
+
+              {/* Data scan accent */}
+              <div className="absolute inset-y-0 right-0 w-px bg-gradient-to-b from-transparent via-brand-400/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Code label */}
               <div className="flex items-center gap-3 mb-6">
-                <span className="px-2 py-1 bg-brand-400/[0.07] border border-brand-400/[0.12] rounded-[2px] text-[10px] font-mono text-brand-400/60 tracking-widest">
+                <span className="panel-label px-2 py-1 bg-brand-400/[0.07] border border-brand-400/[0.12] rounded-[2px] text-[10px] font-mono text-brand-400/60 tracking-widest">
                   {code}
                 </span>
               </div>
 
-              <h3 className="text-xl font-light text-slate-200 mb-4 leading-snug">{title}</h3>
+              <h3 className="panel-title text-xl font-light text-slate-200 mb-4 leading-snug">{title}</h3>
               <p className="text-sm text-slate-400 leading-relaxed font-light mb-6">{body}</p>
 
               {/* Detail line */}
               <div className="flex items-center gap-3">
                 <div className="w-1 h-1 rounded-full bg-brand-400/40" />
-                <span className="text-[11px] font-mono text-brand-400/40 tracking-wide">{detail}</span>
+                <span className="panel-detail text-[11px] font-mono text-brand-400/40 tracking-wide">{detail}</span>
               </div>
 
               {/* Hover bg glow */}

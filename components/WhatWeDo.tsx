@@ -111,7 +111,7 @@ export default function WhatWeDo() {
                         }}
                       />
                       <span
-                        className="text-sm font-mono transition-colors duration-300"
+                        className="text-sm font-mono transition-all duration-300"
                         style={{ color: active ? '#38bdf8' : 'rgba(28,135,215,0.6)' }}
                       >
                         {value}
@@ -119,7 +119,7 @@ export default function WhatWeDo() {
                     </div>
                     {/* Sub-label */}
                     <div
-                      className="text-[11px] uppercase tracking-wider font-mono transition-colors duration-300 pl-2.5"
+                      className="text-[11px] uppercase tracking-wider font-mono transition-all duration-300 pl-2.5"
                       style={{ color: active ? 'rgba(148,163,184,0.7)' : 'rgba(71,85,105,1)' }}
                     >
                       {label}

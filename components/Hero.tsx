@@ -1,29 +1,72 @@
 'use client'
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 import HeroCanvas from './HeroCanvas'
 
 const tags = ['Orthopedic Systems', 'Robotic Applications', 'Predictive Simulation', 'Data-Efficient AI']
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section || typeof window === 'undefined') return
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
+
+    const setPointer = (x: number, y: number) => {
+      section.style.setProperty('--pointer-x', `${x}%`)
+      section.style.setProperty('--pointer-y', `${y}%`)
+    }
+
+    setPointer(50, 38)
+
+    const handleMove = (event: PointerEvent) => {
+      const rect = section.getBoundingClientRect()
+      const x = ((event.clientX - rect.left) / rect.width) * 100
+      const y = ((event.clientY - rect.top) / rect.height) * 100
+      setPointer(x, y)
+    }
+
+    const handleLeave = () => setPointer(50, 38)
+
+    section.addEventListener('pointermove', handleMove, { passive: true })
+    section.addEventListener('pointerleave', handleLeave)
+
+    return () => {
+      section.removeEventListener('pointermove', handleMove)
+      section.removeEventListener('pointerleave', handleLeave)
+    }
+  }, [])
+
   return (
     <section
       id="hero"
+      ref={sectionRef}
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Animated particle mesh */}
       <HeroCanvas />
 
-      {/* Radial ambient glow */}
+      {/* Pointer-reactive ambient layer */}
+      <div className="absolute inset-0 pointer-events-none hero-pointer-glow opacity-70" />
+
+      {/* Low-contrast signal field */}
+      <div className="absolute inset-0 pointer-events-none signal-grid opacity-[0.18] [mask-image:radial-gradient(circle_at_50%_42%,black,transparent_76%)]" />
+
+      {/* Grid overlay */}
+      <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
+
+      {/* Refined atmospheric falloff to keep text crisp */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 80% 55% at 50% 38%, rgba(28,135,215,0.05) 0%, transparent 70%)',
+            'linear-gradient(180deg, rgba(5,5,8,0.2) 0%, transparent 26%, transparent 74%, rgba(5,5,8,0.42) 100%)',
         }}
       />
-
-      {/* Grid overlay */}
-      <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
 
       {/* Bottom gradient fade into next section */}
       <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-b from-transparent to-[#050508] pointer-events-none" />
@@ -85,16 +128,18 @@ export default function Hero() {
         >
           <a
             href="#what-we-do"
-            className="px-9 py-3.5 text-sm font-medium text-[#050508] bg-brand-400 rounded-[2px] hover:bg-brand-300 transition-colors duration-200 tracking-wide"
+            className="button-primary group inline-flex items-center gap-2 px-9 py-3.5 text-sm font-medium text-[#050508] bg-brand-400 rounded-[2px] tracking-wide"
             style={{ boxShadow: '0 0 35px rgba(28,135,215,0.35), 0 8px 24px rgba(0,0,0,0.3)' }}
           >
-            Explore Our Platform
+            <span>Explore Our Platform</span>
+            <ArrowRight size={15} className="button-arrow" />
           </a>
           <a
             href="#contact"
-            className="px-9 py-3.5 text-sm font-medium text-slate-300 border border-white/10 rounded-[2px] hover:border-brand-400/40 hover:text-brand-400 transition-all duration-200 tracking-wide"
+            className="button-secondary group inline-flex items-center gap-2 px-9 py-3.5 text-sm font-medium text-slate-300 border border-white/10 rounded-[2px] tracking-wide"
           >
-            Get in Touch
+            <span>Get in Touch</span>
+            <ArrowRight size={15} className="button-arrow text-brand-400/75" />
           </a>
         </motion.div>
 
@@ -106,7 +151,7 @@ export default function Hero() {
           className="flex flex-wrap justify-center gap-x-8 gap-y-3"
         >
           {tags.map((tag) => (
-            <span key={tag} className="text-[11px] font-mono text-slate-600 tracking-[0.2em] uppercase">
+            <span key={tag} className="text-[11px] font-mono text-slate-600 tracking-[0.2em] uppercase transition-colors duration-300 hover:text-slate-400">
               {tag}
             </span>
           ))}

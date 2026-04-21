@@ -114,22 +114,28 @@ export default function Capabilities() {
             <motion.div
               key={title}
               variants={cardVariants}
-              className="card-hover group relative bg-[#0d0d16]/70 border border-white/[0.05] rounded-[3px] p-8 overflow-hidden"
+              className="interactive-panel group relative bg-[#0d0d16]/70 border border-white/[0.05] rounded-[3px] p-8 overflow-hidden"
+              style={{ ['--panel-glow-rgb' as string]: accent === '#38bdf8' ? '56 189 248' : '129 140 248' }}
             >
               {/* Left accent bar */}
               <div
-                className="absolute left-0 top-6 bottom-6 w-[2px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute left-0 top-6 bottom-6 w-[2px] rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"
                 style={{ background: `linear-gradient(to bottom, transparent, ${accent}, transparent)` }}
               />
 
+              <div
+                className="panel-accent-line absolute top-0 inset-x-6 h-px"
+                style={{ background: `linear-gradient(90deg, transparent, ${accent}66, transparent)` }}
+              />
+
               {/* Corner number */}
-              <span className="absolute top-6 right-7 text-[11px] font-mono text-slate-700 tracking-widest">
+              <span className="panel-label absolute top-6 right-7 text-[11px] font-mono text-slate-700 tracking-widest">
                 {label}
               </span>
 
               {/* Icon */}
               <div
-                className="w-10 h-10 rounded-sm flex items-center justify-center mb-6 border border-white/[0.06]"
+                className="panel-icon w-10 h-10 rounded-sm flex items-center justify-center mb-6 border border-white/[0.06]"
                 style={{ background: `rgba(${accent === '#38bdf8' ? '28,135,215' : '129,140,248'},0.07)` }}
               >
                 <Icon
@@ -138,7 +144,7 @@ export default function Capabilities() {
                 />
               </div>
 
-              <h3 className="text-[17px] font-light text-slate-200 mb-3 leading-snug">{title}</h3>
+              <h3 className="panel-title text-[17px] font-light text-slate-200 mb-3 leading-snug">{title}</h3>
               <p className="text-sm text-slate-400 leading-relaxed font-light">{body}</p>
 
               {/* Hover corner glow */}

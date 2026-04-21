@@ -53,7 +53,7 @@ export default function Footer() {
             <a
               key={l.href}
               href={l.href}
-              className="text-xs text-slate-700 hover:text-slate-400 transition-colors duration-200 tracking-wide"
+              className="interactive-link text-xs text-slate-700 tracking-wide"
             >
               {l.label}
             </a>

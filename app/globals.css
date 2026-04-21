@@ -10,6 +10,12 @@
   --accent-glow: rgba(56, 189, 248, 0.15);
   --text: #f1f5f9;
   --text-muted: #94a3b8;
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-premium: 0 0 0 1px rgba(56, 189, 248, 0.18),
+                    0 18px 48px rgba(0, 0, 0, 0.34);
+  --shadow-premium-strong: 0 0 0 1px rgba(56, 189, 248, 0.24),
+                           0 0 38px rgba(56, 189, 248, 0.07),
+                           0 28px 60px rgba(0, 0, 0, 0.42);
 }
 
 * { box-sizing: border-box; }
@@ -22,6 +28,32 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018) 0%, transparent 18%, transparent 82%, rgba(56, 189, 248, 0.025) 100%);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+main,
+section,
+footer,
+header {
+  position: relative;
+  z-index: 1;
+}
+
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Custom scrollbar */
@@ -52,6 +84,15 @@ body {
   background-size: 28px 28px;
 }
 
+.signal-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(56, 189, 248, 0.06), transparent 48%, rgba(129, 140, 248, 0.045));
+  background-size: 48px 48px, 48px 48px, 100% 100%;
+  animation: dataDrift 18s linear infinite;
+}
+
 /* Glow helpers */
 .glow-sky {
   box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25),
@@ -75,6 +116,152 @@ body {
               0 24px 48px rgba(0, 0, 0, 0.35);
 }
 
+.interactive-panel {
+  position: relative;
+  isolation: isolate;
+  transition:
+    transform 0.45s var(--ease-premium),
+    border-color 0.45s var(--ease-premium),
+    box-shadow 0.45s var(--ease-premium),
+    background-color 0.45s var(--ease-premium);
+}
+
+.interactive-panel::before {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--panel-glow-x, 84%) var(--panel-glow-y, 12%),
+    rgba(var(--panel-glow-rgb, 56 189 248), 0.14) 0%,
+    rgba(var(--panel-glow-rgb, 56 189 248), 0.05) 18%,
+    transparent 56%
+  );
+  opacity: 0;
+  transition: opacity 0.45s var(--ease-premium), transform 0.6s var(--ease-premium);
+}
+
+.interactive-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.018);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease-premium);
+}
+
+.panel-accent-line,
+.panel-title,
+.panel-detail,
+.panel-icon,
+.panel-label {
+  transition:
+    transform 0.4s var(--ease-premium),
+    color 0.35s var(--ease-premium),
+    opacity 0.35s var(--ease-premium),
+    border-color 0.35s var(--ease-premium),
+    background-color 0.35s var(--ease-premium);
+}
+
+.panel-accent-line {
+  transform: scaleX(0.32);
+  transform-origin: left center;
+  opacity: 0.5;
+}
+
+.button-primary,
+.button-secondary,
+.interactive-link,
+.field-input {
+  transition:
+    transform 0.3s var(--ease-premium),
+    color 0.25s var(--ease-premium),
+    background-color 0.25s var(--ease-premium),
+    border-color 0.25s var(--ease-premium),
+    box-shadow 0.35s var(--ease-premium),
+    opacity 0.25s var(--ease-premium);
+}
+
+.button-primary,
+.button-secondary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.button-primary::before,
+.button-secondary::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.2) 48%, transparent 70%);
+  transform: translateX(-135%);
+  opacity: 0;
+  transition: transform 0.8s var(--ease-premium), opacity 0.35s ease;
+}
+
+.button-arrow {
+  transition: transform 0.3s var(--ease-premium);
+}
+
+.interactive-link {
+  position: relative;
+}
+
+.field-shell {
+  position: relative;
+}
+
+.field-shell::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0), rgba(56, 189, 248, 0.65), rgba(56, 189, 248, 0));
+  transform: scaleX(0.25);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform 0.35s var(--ease-premium), opacity 0.35s var(--ease-premium);
+}
+
+.field-shell:focus-within::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.field-shell:focus-within .field-label {
+  color: rgba(56, 189, 248, 0.82);
+}
+
+.field-label {
+  transition: color 0.25s var(--ease-premium);
+}
+
+.field-input {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.field-input:focus {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 0 0 1px rgba(56, 189, 248, 0.22),
+    0 0 0 4px rgba(56, 189, 248, 0.07);
+}
+
+.hero-pointer-glow {
+  background:
+    radial-gradient(circle at var(--pointer-x, 50%) var(--pointer-y, 38%),
+      rgba(56, 189, 248, 0.16) 0%,
+      rgba(56, 189, 248, 0.05) 16%,
+      transparent 44%),
+    radial-gradient(circle at 50% 38%, rgba(129, 140, 248, 0.04), transparent 56%);
+}
+
 /* Scan line animation */
 @keyframes scanLine {
   0% { transform: translateY(-100%); }
@@ -84,8 +271,121 @@ body {
   animation: scanLine 8s linear infinite;
 }
 
+@keyframes dataDrift {
+  from { background-position: 0 0, 0 0, 0 0; }
+  to { background-position: 0 48px, 48px 0, 0 0; }
+}
+
 /* Rotating dashed orbit ring on SystemVisual center node */
 @keyframes spinRing {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+
+:is(a, button, input, textarea):focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.28),
+    0 0 0 4px rgba(56, 189, 248, 0.09);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .interactive-panel:hover,
+  .interactive-panel:focus-within {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.11);
+    box-shadow: var(--shadow-premium-strong);
+  }
+
+  .interactive-panel:hover::before,
+  .interactive-panel:focus-within::before,
+  .interactive-panel:hover::after,
+  .interactive-panel:focus-within::after {
+    opacity: 1;
+  }
+
+  .interactive-panel:hover .panel-accent-line,
+  .interactive-panel:focus-within .panel-accent-line {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  .interactive-panel:hover .panel-title,
+  .interactive-panel:focus-within .panel-title {
+    color: rgba(241, 245, 249, 0.98);
+    transform: translateY(-1px);
+  }
+
+  .interactive-panel:hover .panel-detail,
+  .interactive-panel:focus-within .panel-detail,
+  .interactive-panel:hover .panel-label,
+  .interactive-panel:focus-within .panel-label {
+    color: rgba(186, 230, 253, 0.78);
+  }
+
+  .interactive-panel:hover .panel-icon,
+  .interactive-panel:focus-within .panel-icon {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.16);
+  }
+
+  .button-primary:hover,
+  .button-primary:focus-visible,
+  .button-secondary:hover,
+  .button-secondary:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .button-primary:hover,
+  .button-primary:focus-visible {
+    box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.3), 0 0 30px rgba(56, 189, 248, 0.12), 0 18px 36px rgba(0, 0, 0, 0.34);
+  }
+
+  .button-secondary:hover,
+  .button-secondary:focus-visible {
+    border-color: rgba(56, 189, 248, 0.45);
+    box-shadow: var(--shadow-premium);
+  }
+
+  .button-primary:hover::before,
+  .button-primary:focus-visible::before,
+  .button-secondary:hover::before,
+  .button-secondary:focus-visible::before {
+    transform: translateX(135%);
+    opacity: 1;
+  }
+
+  .button-primary:hover .button-arrow,
+  .button-primary:focus-visible .button-arrow,
+  .button-secondary:hover .button-arrow,
+  .button-secondary:focus-visible .button-arrow {
+    transform: translateX(3px);
+  }
+
+  .interactive-link:hover,
+  .interactive-link:focus-visible {
+    color: rgba(226, 232, 240, 0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .signal-grid,
+  .scan-line {
+    animation: none !important;
+  }
+
+  .interactive-panel,
+  .interactive-panel::before,
+  .interactive-panel::after,
+  .button-primary,
+  .button-secondary,
+  .interactive-link,
+  .field-input,
+  .button-primary::before,
+  .button-secondary::before {
+    transition-duration: 0.01ms !important;
+  }
 }

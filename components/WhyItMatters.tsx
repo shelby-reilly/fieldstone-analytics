@@ -97,27 +97,34 @@ export default function WhyItMatters() {
             <motion.div
               key={heading}
               variants={itemVariants}
-              className="card-hover group relative bg-[#0d0d16]/60 border border-white/[0.05] rounded-[3px] p-8 overflow-hidden"
+              className="interactive-panel group relative bg-[#0d0d16]/60 border border-white/[0.05] rounded-[3px] p-8 overflow-hidden"
+              style={{ ['--panel-glow-rgb' as string]: '129 140 248', ['--panel-glow-x' as string]: '78%', ['--panel-glow-y' as string]: '18%' }}
             >
+              <div className="panel-accent-line absolute top-0 inset-x-6 h-px bg-gradient-to-r from-transparent via-indigo-400/45 to-transparent" />
+
               {/* Large stat symbol */}
-              <div
+              <motion.div
+                initial={{ opacity: 0, scale: 0.92 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.55, delay: 0.16 }}
                 className="absolute top-7 right-8 text-5xl font-extralight text-indigo-400/10 group-hover:text-indigo-400/20 transition-colors duration-300 select-none leading-none font-mono"
               >
                 {stat}
-              </div>
+              </motion.div>
 
               <div className="mb-1">
-                <span className="text-[10px] font-mono text-indigo-400/50 tracking-widest uppercase">
+                <span className="panel-label text-[10px] font-mono text-indigo-400/50 tracking-widest uppercase">
                   {sub}
                 </span>
               </div>
 
-              <h3 className="text-2xl font-extralight text-slate-100 mb-4 leading-snug">{heading}</h3>
+              <h3 className="panel-title text-2xl font-extralight text-slate-100 mb-4 leading-snug">{heading}</h3>
               <p className="text-sm text-slate-400 leading-relaxed font-light">{body}</p>
 
               <div className="mt-6 flex items-center gap-2">
                 <div className="h-px flex-1 bg-white/[0.04]" />
-                <span className="text-[10px] font-mono text-indigo-400/35 tracking-widest uppercase">
+                <span className="panel-detail text-[10px] font-mono text-indigo-400/35 tracking-widest uppercase">
                   {statLabel}
                 </span>
               </div>

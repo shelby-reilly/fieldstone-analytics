@@ -4,13 +4,20 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Mail } from 'lucide-react'
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false)
+  const [submitState, setSubmitState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [form, setForm] = useState({ name: '', email: '', message: '' })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Replace with your actual form submission logic
-    setSubmitted(true)
+    setSubmitState('submitting')
+
+    try {
+      // Replace this simulated delay with your actual async submission logic.
+      await new Promise((resolve) => setTimeout(resolve, 700))
+      setSubmitState('success')
+    } catch {
+      setSubmitState('error')
+    }
   }
 
   return (
@@ -80,7 +87,7 @@ export default function Contact() {
               <Mail size={15} className="text-brand-400/60" />
               <a
                 href="mailto:hello@fieldstoneanalytics.com"
-                className="font-mono text-slate-400 hover:text-brand-400 transition-colors duration-200"
+                className="interactive-link font-mono text-slate-400"
               >
                 hello@fieldstoneanalytics.com
               </a>
@@ -94,8 +101,11 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.12 }}
           >
-            {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-16 bg-[#0d0d16]/60 border border-white/[0.05] rounded-[3px]">
+            {submitState === 'success' ? (
+              <div className="interactive-panel h-full flex flex-col items-center justify-center text-center py-16 bg-[#0d0d16]/60 border border-white/[0.05] rounded-[3px] overflow-hidden"
+                style={{ ['--panel-glow-rgb' as string]: '52 211 153' }}
+              >
+                <div className="panel-accent-line absolute top-0 inset-x-8 h-px bg-gradient-to-r from-transparent via-emerald-400/45 to-transparent" />
                 <div
                   className="w-12 h-12 rounded-full border border-emerald-400/30 flex items-center justify-center mb-5"
                   style={{ boxShadow: '0 0 20px rgba(52,211,153,0.15)' }}
@@ -108,10 +118,13 @@ export default function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-[#0d0d16]/60 border border-white/[0.05] rounded-[3px] p-8 flex flex-col gap-5"
+                className="interactive-panel bg-[#0d0d16]/60 border border-white/[0.05] rounded-[3px] p-8 flex flex-col gap-5 overflow-hidden"
+                style={{ ['--panel-glow-rgb' as string]: '56 189 248', ['--panel-glow-x' as string]: '74%', ['--panel-glow-y' as string]: '14%' }}
               >
-                <div>
-                  <label className="block text-[11px] font-mono text-slate-500 tracking-widest uppercase mb-2">
+                <div className="panel-accent-line absolute top-0 inset-x-8 h-px bg-gradient-to-r from-transparent via-brand-400/35 to-transparent" />
+
+                <div className="field-shell">
+                  <label className="field-label block text-[11px] font-mono text-slate-500 tracking-widest uppercase mb-2">
                     Name
                   </label>
                   <input
@@ -119,13 +132,13 @@ export default function Contact() {
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-brand-400/40 focus:bg-white/[0.04] transition-all duration-200"
+                    className="field-input w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-brand-400/40 focus:bg-white/[0.04]"
                     placeholder="Your name"
                   />
                 </div>
 
-                <div>
-                  <label className="block text-[11px] font-mono text-slate-500 tracking-widest uppercase mb-2">
+                <div className="field-shell">
+                  <label className="field-label block text-[11px] font-mono text-slate-500 tracking-widest uppercase mb-2">
                     Email
                   </label>
                   <input
@@ -133,13 +146,13 @@ export default function Contact() {
                     required
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-brand-400/40 focus:bg-white/[0.04] transition-all duration-200"
+                    className="field-input w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-brand-400/40 focus:bg-white/[0.04]"
                     placeholder="your@email.com"
                   />
                 </div>
 
-                <div>
-                  <label className="block text-[11px] font-mono text-slate-500 tracking-widest uppercase mb-2">
+                <div className="field-shell">
+                  <label className="field-label block text-[11px] font-mono text-slate-500 tracking-widest uppercase mb-2">
                     Message
                   </label>
                   <textarea
@@ -147,18 +160,24 @@ export default function Contact() {
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-brand-400/40 focus:bg-white/[0.04] transition-all duration-200 resize-none"
+                    className="field-input w-full bg-white/[0.03] border border-white/[0.07] rounded-[2px] px-4 py-3 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-brand-400/40 focus:bg-white/[0.04] resize-none"
                     placeholder="Tell us about your modeling challenges..."
                   />
                 </div>
 
+                <div aria-live="polite" className="min-h-5 text-[11px] font-mono tracking-[0.12em] uppercase">
+                  {submitState === 'submitting' && <span className="text-brand-400/60">Transmitting inquiry...</span>}
+                  {submitState === 'error' && <span className="text-rose-400/70">Submission unavailable. Please email us directly.</span>}
+                </div>
+
                 <button
                   type="submit"
-                  className="group flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-medium text-[#050508] bg-brand-400 rounded-[2px] hover:bg-brand-300 transition-colors duration-200"
+                  disabled={submitState === 'submitting'}
+                  className="button-primary group flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-medium text-[#050508] bg-brand-400 rounded-[2px] disabled:opacity-80 disabled:cursor-not-allowed"
                   style={{ boxShadow: '0 0 25px rgba(28,135,215,0.25)' }}
                 >
-                  Start a Conversation
-                  <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform duration-200" />
+                  <span>{submitState === 'submitting' ? 'Sending Message' : 'Start a Conversation'}</span>
+                  <ArrowRight size={15} className="button-arrow" />
                 </button>
               </form>
             )}
